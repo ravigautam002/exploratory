@@ -1,3 +1,6 @@
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+
 mergedData<-merge(NEI, SCC, by='SCC')
 mergedData$Short.Name<-tolower(mergedData$Short.Name)
 total<-with(mergedData[grep('coal', mergedData$Short.Name),],
